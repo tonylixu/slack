@@ -14,9 +14,15 @@ import (
 var SLACK_API string = "https://slack.com/api/"
 var SLACK_WEB_API_FORMAT string = "https://%s.slack.com/api/users.admin.%s?t=%s"
 
+// Disable ssl verification
+tr := &http.Transport{
+	TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+}
+
+
 // HTTPClient sets a custom http.Client
 // deprecated: in favor of SetHTTPClient()
-var HTTPClient = &http.Client{}
+var HTTPClient = &http.Client{Transport: tr}
 
 var customHTTPClient HTTPRequester = HTTPClient
 
