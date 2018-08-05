@@ -15,7 +15,7 @@ var SLACK_API string = "https://slack.com/api/"
 var SLACK_WEB_API_FORMAT string = "https://%s.slack.com/api/users.admin.%s?t=%s"
 
 // Disable ssl verification
-tr := &http.Transport{
+var tr = &http.Transport{
 	TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 }
 
