@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"crypto/tls"
 )
 
 // Added as a var so that we can change this for testing purposes
